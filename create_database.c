@@ -17,8 +17,6 @@ void read_datafile(Flist *f_head, Wlist *w_head[], char *filename)
 {
     printf("Reading datafile for  %s\n", f_head->file_name);
     FILE *fptr = fopen(filename, "r");
-    // file_name = filename;
-    //validation for open
     if(fptr == NULL){
         printf("Error: Opening the file\n");
         return;
@@ -27,7 +25,7 @@ void read_datafile(Flist *f_head, Wlist *w_head[], char *filename)
     char word[WORD_SIZE];
     while(fscanf(fptr, "%s", word) != EOF)
     {   
-        int flag = 1;
+        int uniqueword_flag = 1;
         //find the index
         int index = hash_function(word);
         //check for the true range
@@ -37,23 +35,26 @@ void read_datafile(Flist *f_head, Wlist *w_head[], char *filename)
         }
         if(w_head[index] != NULL)
         {
-            Wlist *temp = w_head[index];
-            while(temp)
-            {
-                if(strcmp(temp->word, word) == 0)
-                {   
-                    update_word_count(&temp, filename);
-                    flag = 0;
-                    break;
-                    
-                }
-                temp=temp->link;
-            }
+            update_wordcount_ifword_exists(w_head[index], word, filename, &uniqueword_flag);
         }
-        if(flag == 1)
+        if(uniqueword_flag)
             insert_at_last(&w_head[index], word, filename);
     }
     fclose(fptr);
+}
+
+void update_wordcount_ifword_exists(Wlist *whead, char * word, char* filename, int *uniqueword_flag){
+
+    while(whead)
+    {
+        if(strcmp(whead->word, word) == 0)
+        {   
+            update_word_count(&whead, filename);
+            *uniqueword_flag = 0;
+             return;
+        }
+        whead=whead->link;
+    }
 }
 
 

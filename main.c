@@ -42,11 +42,7 @@ int main(int argc, char* argv[]){
                 update_database(head,&f_head);
                 break;
             case 4:
-                char word[WORD_SIZE];
-                printf("Enter the word to search: ");
-                scanf("%s", word);
-                int index = hash_function(word);
-                search(head[index], word);
+                try_search_word(head);
                 break;
             case 5:
                 save_database(head);

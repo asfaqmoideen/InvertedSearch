@@ -13,11 +13,11 @@ void display_database(Wlist *head[])
         //print alphabetically one after the other
         if(head[i] != NULL)
         {
-            print_word_count(head[i]);
+            print_word_details(head[i]);
         }
     }
 }
-int print_word_count(Wlist *head)
+int print_word_details(Wlist *head)
 {
     //traverse through the Wlst
     while(head != NULL)

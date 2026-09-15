@@ -65,12 +65,10 @@ int update_link_table(Wlist *head[], char*filename);
 int update_word_count(Wlist ** head, char * file_name);
 
 // print_word_count
-int print_word_count(Wlist *head);
+int print_word_details(Wlist *head);
 
 //searching a word
 int search( Wlist *head, char *word);
-
-void try_searching_word(Wlist *head);
 
 //display 
 void display_database( Wlist *head[]);
@@ -90,8 +88,6 @@ void file_validation_n_file_list(Flist **f_head, char *argv[]);
 
 int hash_function(const char *word);
 
-int isfileexist(char *filename);
-
 /*Inserts the filename at theend of the file list*/
 int insert_filename_at_last(Flist **f_head, char *file_name);
 
@@ -101,5 +97,9 @@ int search_file_list(Flist *fhead, char *name);
 int print_Flist(Flist *head);
 
 int insert_tlink_at_last(Wlist **head, char *filename);
+
+void try_search_word(Wlist **head);
+
+void update_wordcount_ifword_exists(Wlist *temp, char * word, char* filename, int *uniqueword_flag);
 
 #endif
