@@ -6,7 +6,6 @@ void file_validation_n_file_list(Flist **f_head, char *argv[])
     int empty;
     while(argv[i] != NULL)
     {   
-        printf("%s is being validated\n", argv[i]);
         empty = isFileEmpty(argv[i]);
         if(empty == FILE_NOTAVAILABLE)
         {
@@ -82,7 +81,6 @@ int search_file_list(Flist *fhead, char *name){
     }
     while (fhead)
     {
-        printf("%s : list, %s given", fhead->file_name, name);
         if(strcmp(fhead->file_name, name) == 0) {
             return REPEATATION;
         }

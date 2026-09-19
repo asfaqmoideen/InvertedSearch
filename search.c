@@ -28,3 +28,11 @@ int search(Wlist *head, char *word)
     //if the word is not found
     printf("Search word not found\n");
 }
+
+void try_search_word(Wlist **head){
+    char word[WORD_SIZE];
+    printf("Enter the word to search: ");
+    scanf("%s", word);
+    int index = hash_function(word);
+    search(head[index], word);
+}

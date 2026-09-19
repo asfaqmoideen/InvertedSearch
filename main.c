@@ -26,8 +26,10 @@ int main(int argc, char* argv[]){
         return -1;
     }
 
+    printf("Inverted Search - Fastest way to find words in different files\n");
     while(1){
         printf("1. Create Database\n2. Display Database\n3. Update Database\n4. Search Word\n5. Save to Database\n6. Exit\n");
+        printf("Enter any of the above option : ");
         scanf("%d", &option);
         getchar();
         switch(option)
@@ -42,11 +44,7 @@ int main(int argc, char* argv[]){
                 update_database(head,&f_head);
                 break;
             case 4:
-                char word[WORD_SIZE];
-                printf("Enter the word to search: ");
-                scanf("%s", word);
-                int index = hash_function(word);
-                search(head[index], word);
+                try_search_word(head);
                 break;
             case 5:
                 save_database(head);
@@ -56,6 +54,7 @@ int main(int argc, char* argv[]){
             default:
                 printf("Invalid Choice\n");
         }
+        printf("\nMain Menu\n");
     }
     return 0;
 }

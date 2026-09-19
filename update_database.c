@@ -11,27 +11,27 @@ int update_database(Wlist *head[], Flist **f_head)
     //4. TODO -- file_validation_n_file_list -- copy and paste without the loop and cntinue
     //single file we are adding to the file linked list
     //create the database for the updated file -- bring the f head to the last node
-    int empty;
+    int file_status;
      printf("%s is being validated\n", file_name);
-        empty = isFileEmpty(file_name);
-        if(empty == FILE_NOTAVAILABLE)
+        file_status = isFileEmpty(file_name);
+        if(file_status == FILE_NOTAVAILABLE)
         {
             printf("FIle %s is not avaialable\n",file_name);
             printf("Hence we are not adding that file into Linked List\n");
         }
-        else if(empty == FILE_EMPTY)
+        else if(file_status == FILE_EMPTY)
         {
             printf("Contents are empty\n");
             printf("Hence we are not adding that file into Linked List\n");
         }
         else
         {
-            int ret_val = to_create_list_of_files(f_head, file_name);
-            if(ret_val == SUCCESS)
+            int file_creation_status = to_create_list_of_files(f_head, file_name);
+            if(file_creation_status == SUCCESS)
             {
                 printf("Successfully added %s file into Linked List\n", file_name);
             }
-            else if(ret_val == REPEATATION)
+            else if(file_creation_status == REPEATATION)
             {
                 printf("The file names %s already exits\n", file_name);
             }
