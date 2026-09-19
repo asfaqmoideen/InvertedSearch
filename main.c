@@ -26,8 +26,10 @@ int main(int argc, char* argv[]){
         return -1;
     }
 
+    printf("Inverted Search - Fastest way to find words in different files\n");
     while(1){
         printf("1. Create Database\n2. Display Database\n3. Update Database\n4. Search Word\n5. Save to Database\n6. Exit\n");
+        printf("Enter any of the above option : ");
         scanf("%d", &option);
         getchar();
         switch(option)
@@ -52,6 +54,7 @@ int main(int argc, char* argv[]){
             default:
                 printf("Invalid Choice\n");
         }
+        printf("\nMain Menu\n");
     }
     return 0;
 }

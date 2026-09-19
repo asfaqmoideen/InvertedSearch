@@ -23,6 +23,8 @@ int save_database(Wlist *head[])
            write_databasefile(head[i], &fptr);
         }
     }
+
+    printf("Successfully saved the database to the file %s\n", file_name);
 }
 
 void write_databasefile(Wlist *head, FILE** databasefile){
