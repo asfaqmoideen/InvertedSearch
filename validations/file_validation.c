@@ -1,4 +1,4 @@
-#include "inv_search.h"
+#include "../include/inv_search.h"
 
 void file_validation_n_file_list(Flist **f_head, char *argv[])
 {

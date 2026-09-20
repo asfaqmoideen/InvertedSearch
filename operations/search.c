@@ -1,4 +1,4 @@
-#include "inv_search.h"
+#include "../include/inv_search.h"
 
 int search(Wlist *head, char *word)
 {

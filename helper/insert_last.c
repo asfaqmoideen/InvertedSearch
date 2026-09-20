@@ -1,4 +1,4 @@
-#include "inv_search.h"
+#include "../include/inv_search.h"
 // extern char *file_name;
 
 int insert_at_last(Wlist **head, data_t *data, char *filename)

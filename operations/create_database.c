@@ -1,4 +1,4 @@
-#include "inv_search.h"
+#include "../include/inv_search.h"
 
 void create_database(Flist *f_head, Wlist *head[])
 {   

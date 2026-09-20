@@ -1,4 +1,4 @@
-#include "inv_search.h"
+#include "../include/inv_search.h"
 
 int hash_function(const char *word){
     return tolower(word[0]) % 97;

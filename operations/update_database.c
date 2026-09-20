@@ -1,4 +1,4 @@
-#include "inv_search.h"
+#include "../include/inv_search.h"
 
 int update_database(Wlist *head[], Flist **f_head)
 {

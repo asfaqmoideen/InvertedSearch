@@ -1,4 +1,4 @@
-#include "inv_search.h"
+#include "../include/inv_search.h"
 #define BOLD "\033[1m"
 #define RESET "\033[0m"
 
